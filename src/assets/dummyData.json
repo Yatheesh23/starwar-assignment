@@ -1,0 +1,92 @@
+[
+  {
+    "movieName": "Movie1",
+    "charactersName": [
+      {
+        "name": "character1",
+        "birthYear": "BBY1",
+        "species": ["spice1", "spice2"]
+      },
+      {
+        "name": "character2",
+        "birthYear": "BBY2",
+        "species": ["spice2"]
+      },
+      {
+        "name": "character3",
+        "birthYear": "BBY3",
+        "species": ["spice3"]
+      },
+
+      {
+        "name": "character4",
+        "birthYear": "BBY4",
+        "species": []
+      },
+      {
+        "name": "character5",
+        "birthYear": "BBY5",
+        "species": ["spice1", "spice2", "spice3", "spice4"]
+      },
+      {
+        "name": "character6",
+        "birthYear": "BBY6",
+        "species": ["spice1", "spice2", "spice3", "spice4"]
+      },
+      {
+        "name": "character7",
+        "birthYear": "BBY7",
+        "species": []
+      }
+    ],
+    "birthYear": ["BBY1", "BBY2", "BBY3", "BBY4", "BBY5", "BBY6", "BBY7"],
+    "spicesNames": ["spice1", "spice1", "spice13"],
+    "vehicleNames": ["vehicle1", "vehicle2", "vehicle3"],
+    "startShipsNames": ["startShip1", "startShip2", "startShip3"]
+  },
+  {
+    "movieName": "Movie2",
+    "charactersName": [
+      {
+        "name": "character21",
+        "birthYear": "BBY21",
+        "species": ["spice21", "spice22"]
+      },
+      {
+        "name": "character22",
+        "birthYear": "BBY22",
+        "species": ["spice22"]
+      },
+      {
+        "name": "character23",
+        "birthYear": "BBY23",
+        "species": ["spice23"]
+      },
+
+      {
+        "name": "character24",
+        "birthYear": "BBY24",
+        "species": []
+      },
+      {
+        "name": "character25",
+        "birthYear": "BBY25",
+        "species": ["spice21", "spice22", "spice23", "spice24"]
+      },
+      {
+        "name": "character26",
+        "birthYear": "BBY26",
+        "species": ["spice21", "spice22", "spice23", "spice24"]
+      },
+      {
+        "name": "character7",
+        "birthYear": "BBY7",
+        "species": []
+      }
+    ],
+    "birthYear": ["BBY1", "BBY2", "BBY3", "BBY4", "BBY5", "BBY6", "BBY7"],
+    "spicesNames": ["spice1", "spice1", "spice13"],
+    "vehicleNames": ["vehicle1", "vehicle2", "vehicle3"],
+    "startShipsNames": ["startShip1", "startShip2", "startShip3"]
+  }
+]
