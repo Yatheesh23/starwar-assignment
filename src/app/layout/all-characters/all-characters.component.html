@@ -14,6 +14,7 @@
                     </th>
                 </thead>
                 <tbody>
+
                     <tr
                         *ngFor="let char of combinedCharacters | paginate: { itemsPerPage: itemsPerPage, currentPage: page, totalItems: totalCount };index as i ">
                         <td class="grayc">{{i+1}}</td>
