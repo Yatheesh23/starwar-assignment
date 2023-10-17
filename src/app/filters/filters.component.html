@@ -1,0 +1,119 @@
+<div class="container-fluid">
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    <div class="header-container">
+        <div style="display: flex;align-items: center;">
+            <h1>STAR WARS</h1>
+        </div>
+        <div style="display: flex;align-items: end;">
+            <p>THE SWAPI PROJECT</p>
+        </div>
+    </div>
+    <div class="sub-container">
+        <div class="sidebar">
+            <div class="filter-container">
+                <h2 style="margin: 0;padding: 0;">FILTERS</h2>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Character Name
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul>
+                            <li *ngFor="let movie of charArray"> <input type="checkbox"
+                                    (change)="onChangeMovie(movie.name)" />
+                                {{ movie.name }}</li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Species
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul>
+                            <li *ngFor="let spice of speciesList"> <input type="checkbox"
+                                    (change)="onChangeSpice(spice.species)" />
+                                {{ spice.species }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Vehicle
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul>
+                            <li *ngFor="let veh of vehicleList"> <input type="checkbox"
+                                    (change)="onChangeVehicleList(veh)" />
+                                {{ veh }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Star Ships
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul>
+                            <li *ngFor="let ssl of starList"> <input type="checkbox" (change)="onChangeStarList(ssl)" />
+                                {{ ssl }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Birth Year
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <ul>
+                            <li *ngFor="let by of charArray"> <input type="checkbox"
+                                    (change)="onChangeBirthYear(by.birth_year)" />
+                                {{ by.birth_year }}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style=" margin: 2em 0;">
+                    <button type="button" (click)="applyFilter()" class="btn btn-outline-success">SEARCH</button>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+
+
+                        <th *ngFor="let item of tableHeader; index as i">
+                            <ng-container class="hedaerbg">
+                                {{ item.label }}
+                            </ng-container>
+                        </th>
+                    </thead>
+                    <div *ngIf="isLoading" class="spinner-border" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+
+                    <tbody *ngIf="!isLoading">
+                        <tr
+                            *ngFor="let char of finalFilteredData | paginate: { itemsPerPage: itemsPerPage, currentPage: page, totalItems: totalCount };index as i ">
+                            <td class="grayc">{{char.slNo}}</td>
+                            <td class="grayc" (click)=" navigateToCharacter(char.slNo,char.url)"> {{char.name}}</td>
+                            <td class="grayc"> {{char.species}}</td>
+                            <td class="grayc"> {{char.birth_year}}</td>
+                        </tr>
+                </table>
+            </div>
+            <div class="list">
+                <pagination-controls (pageChange)="dataLimitChange($event)"></pagination-controls>
+            </div>
+        </div>
+    </div>
+
+</div>

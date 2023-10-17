@@ -1,11 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
+import { SinleCharacterComponent } from './sinle-character/sinle-character.component';
+import { AppComponent } from './app.component';
+import { FiltersComponent } from './filters/filters.component';
 const routes: Routes = [
   {
-    path: '', loadChildren: () => import('./layout/layout.module').then(m => m.LayoutModule)
-  }
+    path: '',
+    component: FiltersComponent,
+  },
+  {
+    path: 'characters/:id',
+    component: SinleCharacterComponent,
 
+  }
 ];
 
 @NgModule({

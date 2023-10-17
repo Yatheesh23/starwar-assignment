@@ -1,0 +1,14 @@
+<div class="container">
+    <a href="/">Go back</a>
+    <div class="info">
+        <div *ngIf="isLoading" class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+        <p>Name:{{charResponse['name']}}</p>
+        <p>species:Species {{id}}</p>
+        <p> StarShips:<span *ngFor="let title of starShipsArr">{{ title }}</span>
+        </p>
+        <p>Movies:<span *ngFor="let title of movies">{{ title }}</span>
+        </p>
+    </div>
+</div>
